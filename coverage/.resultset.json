@@ -1,0 +1,67 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/controllers/ideas_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/spec/features/user_creates_an_idea_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/models/idea.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1444767810
+  }
+}
