@@ -13,10 +13,6 @@ gem 'less-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'twitter-bootstrap-rails'
 gem 'responders'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'

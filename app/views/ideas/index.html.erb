@@ -7,22 +7,24 @@
 </head>
 
 <body>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
       <h3>Ideas</h3>
       <br>
-      <div id="ideas">
+      <div id="all-ideas">
         <% @ideas.each do |idea| %>
           <h4><%= idea.title %></h4>
           <h5><%= idea.body %></h5>
           <h6>This idea is: <%= idea.quality_level %></h6>
           <%= link_to "Edit", edit_idea_path(idea), class: "btn btn-xs btn-info" %>
           <%= link_to "Delete", idea_path(idea), method: :delete, class: "btn btn-xs btn-danger" %>
+          <button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>
           <br>
           <br>
-      <% end %>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-2"></div>
@@ -37,11 +39,14 @@
         <input class="form-control" type="text" id="idea-title" placeholder="Title">
         <input class="form-control" type="text" id="idea-body" placeholder="Description">
       </div>
-      <input class="btn btn-default pull-right" id="create-idea" type="button" name="submit" value="Create Idea">
+      <input class="btn btn-default pull-left" id="create-idea" type="button" name="submit" value="Create Idea">
     </div>
     <div class="col-sm-2"></div>
   </div>
 </div>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>

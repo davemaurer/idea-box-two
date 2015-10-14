@@ -1,9 +1,11 @@
 $(document).ready(function() {
+    console.log('funny');
   createIdea();
 });
 
 function createIdea() {
-  $("create-idea").on("click", function() {
+  $("#create-idea").on("click", function() {
+    console.log('this works');
     var ideaParams = {
       idea: {
         title: $("idea-title").val(),
@@ -22,7 +24,7 @@ function createIdea() {
 }
 
 function renderIdea(idea) {
-  $("#ideas").append(
+  $("#all-ideas").append(
     "<div class='idea' data-id='"
     + idea.id
     + "'><h4>"

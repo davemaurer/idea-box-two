@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  respond_to :html, :json
+  respond_to :json
 
   before_action :find_idea, only: [:update, :destroy]
 
@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
   def create
     idea = Idea.new(valid_params)
     if idea.save
-      respond_with()
+      render json: idea
     else
       render json: {status: :error}
     end
