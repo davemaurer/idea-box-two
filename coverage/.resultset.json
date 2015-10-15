@@ -1,39 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/controllers/ideas_controller.rb": [
+      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/controllers/main_controller.rb": [
         1,
         1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
         null,
         null
       ],
@@ -56,12 +26,8 @@
         1,
         null,
         null
-      ],
-      "/Users/davidmaurer/rails/turing_projects/module_4/idea_box_two/app/models/idea.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1444767810
+    "timestamp": 1444924353
   }
 }

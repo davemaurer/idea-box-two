@@ -9,7 +9,9 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def create
-    respond_with Idea.create!(valid_params)
+    @idea = Idea.create!(valid_params)
+    # respond_with Idea.create!(valid_params)
+    render json: @idea
   end
 
   def update
