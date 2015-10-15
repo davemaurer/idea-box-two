@@ -9,20 +9,15 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def create
-    idea = Idea.new(valid_params)
-    if idea.save
-      respond_with idea
-    else
-      render json: {status: :error}
-    end
+    respond_with Idea.create!(valid_params)
   end
 
   def update
-    respond_with @idea.update(valid_params)
+    respond_with @idea.update_attributes(valid_params)
   end
 
   def destroy
-    respond_with @idea.destroy
+    respond_with Idea.destroy(params[:id])
   end
 
   private

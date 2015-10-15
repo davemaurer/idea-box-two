@@ -1,6 +1,7 @@
 $(document).ready(function() {
   renderIdeas();
   createIdea();
+  editIdea();
   deleteIdea();
 });
 
@@ -25,25 +26,49 @@ function createIdea() {
         body: $("#idea-body").val()
       }
     };
+
     $.ajax({
       type: "POST",
-      url: "/api/v1/ideas",
+      url: "/api/v1/ideas.json",
       data: ideaParams,
       success: function(idea) {
         renderIdea(idea);
-        resetForm();
+        clearForm();
       }
     });
   });
 }
 
+function editIdea() {
+  $("#all-ideas").delegate("edit-idea", "click", function() {
+    var $idea = $(this).closest(".idea");
+
+    var ideaParams = {
+      idea: {
+        title: $("#idea-title").val(),
+        body: $("#idea-body").val()
+      }
+    };
+
+    $.ajax({
+      type: "PUT",
+      url: "/api/v1/ideas" + $idea.attr('data-id') + ".json",
+      data: ideaParams,
+      success: function(idea) {
+        $idea.replaceWith(idea);
+      }
+    });
+  });
+}
+
+
 function deleteIdea() {
   $("#all-ideas").delegate("#delete-idea", "click", function() {
     var $idea = $(this).closest(".idea");
 
-    $.ajax( {
+    $.ajax({
       type: "DELETE",
-      url: "/api/v1/ideas" + $idea.attr('data-id') + ".json",
+      url: "/api/v1/ideas/" + $idea.attr('data-id') + ".json",
       success: function() {
         $idea.remove();
       },
@@ -54,7 +79,7 @@ function deleteIdea() {
   });
 }
 
-function resetForm() {
+function clearForm() {
   $("#idea-title").val('');
   $("#idea-body").val('');
 }
