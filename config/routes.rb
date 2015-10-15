@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # defaults... takes the place of
-  root 'ideas#index' #, defaults: {format: 'json'}
+  root 'main#index'#, defaults: {format: 'json'}
 
-  resources :ideas
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :ideas, except: [:show, :new, :edit]
+    end
+  end
 end

@@ -1,29 +1,28 @@
-class IdeasController < ApplicationController
+class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   before_action :find_idea, only: [:update, :destroy]
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.sort_by(&:created_at).reverse
+    respond_with @ideas
   end
 
   def create
     idea = Idea.new(valid_params)
     if idea.save
-      render json: idea
+      respond_with idea
     else
       render json: {status: :error}
     end
   end
 
   def update
-    @idea.update_attributes(valid_params)
-    # render partial: 'ideas/idea', locals: {idea: @idea}, layout: false
+    respond_with @idea.update(valid_params)
   end
 
   def destroy
-    @idea.destroy
-    render json: {status: :success}
+    respond_with @idea.destroy
   end
 
   private
